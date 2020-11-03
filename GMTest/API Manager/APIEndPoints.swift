@@ -11,13 +11,13 @@ import Alamofire
 import SwiftyJSON
 
 //MARK:- EmployeeData
-enum EmployeeDataEndPoint: Endpoint {
+enum GithubDataEndPoint: Endpoint {
     
-    case GetEmployeeData
+    case getLast25Commits(limit: Int)
     
     var method: HTTPMethod {
         switch self {
-        case .GetEmployeeData:
+        case .getLast25Commits:
             return .get
         
         }
@@ -25,15 +25,15 @@ enum EmployeeDataEndPoint: Endpoint {
     
     var path: String {
         switch self {
-        case .GetEmployeeData:
-            return KBasePath + OauthPath.getEmployeeList.rawValue
+        case .getLast25Commits(let limit):
+            return KBasePath + OauthPath.getLast25Commits.rawValue + String(limit)
             
         }
     }
     
     var query: [String: Any]  {
         switch self {
-        case .GetEmployeeData:
+        case .getLast25Commits:
             return [String: Any]()
     
         }

@@ -31,17 +31,6 @@ struct Helper{
         return dateFormatter.string(from: date)
     }
    
-
-    static func getLastSavedId()->Int{
-        return UserDefaults.standard.integer(forKey: Constants.lastSavedId)
-    }
-
-    static func saveLastSavedId(with lastSavedId: Int) {
-        UserDefaults.standard.set(lastSavedId, forKey: Constants.lastSavedId)
-        UserDefaults.standard.synchronize()
-    }
-
-  
     private static func getCompressedImgData(_ image:UIImage) -> Data? {
         guard let imageData = image.jpegData(compressionQuality: 0.5) else {return nil}
         let bytes = imageData.count

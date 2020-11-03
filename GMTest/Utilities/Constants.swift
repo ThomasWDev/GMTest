@@ -11,18 +11,9 @@ import UIKit
 let IS_IPHONE_X = (UIScreen.main.nativeBounds.height == 2436)
 
 struct Constants {
-    static let headerToken      = "headerToken"
-    static let lastSavedId      = "lastSaveId"
+    static let gitHubUserName      = "ThomasWDev"
+    static let gitHubRepoName      = "GMTest"
     
-    // database value
-    static let employeeId          = "eId"
-    static let employeeName        = "eName"
-    static let employeeImage       = "eImage"
-    static let employeeAge         = "eAge"
-    static let employeeSalary      = "eSalary"
-    static let employeeRating      = "eRating"
-    static let dbName              = "TestApp"
-    static let dbTableName         = "EmployeeData"
 
 }
 

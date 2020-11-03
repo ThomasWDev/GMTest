@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -30,6 +30,9 @@
 		A98F470925509E3C0014B416 /* UIColor+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F46F925509E3C0014B416 /* UIColor+Helper.swift */; };
 		A98F470A25509E3C0014B416 /* UIAlertController+Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F46FA25509E3C0014B416 /* UIAlertController+Show.swift */; };
 		A98F470B25509E3C0014B416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A98F46FC25509E3C0014B416 /* Main.storyboard */; };
+		A98F470D2550A8C80014B416 /* DashboardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F470C2550A8C80014B416 /* DashboardVM.swift */; };
+		A98F470F2550AA790014B416 /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F470E2550AA790014B416 /* CommitResponse.swift */; };
+		A98F47112550AE150014B416 /* CommitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A98F47102550AE150014B416 /* CommitCell.swift */; };
 		FAEF5A9E2EA93CE424C5E42F /* Pods_GMTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC2F4E03A3FED588BB712D85 /* Pods_GMTestTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +86,9 @@
 		A98F46F925509E3C0014B416 /* UIColor+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helper.swift"; sourceTree = "<group>"; };
 		A98F46FA25509E3C0014B416 /* UIAlertController+Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Show.swift"; sourceTree = "<group>"; };
 		A98F46FC25509E3C0014B416 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A98F470C2550A8C80014B416 /* DashboardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardVM.swift; sourceTree = "<group>"; };
+		A98F470E2550AA790014B416 /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
+		A98F47102550AE150014B416 /* CommitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCell.swift; sourceTree = "<group>"; };
 		C96BA91AF29A95C68A4F378E /* Pods-GMTest-GMTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMTest-GMTestUITests.debug.xcconfig"; path = "Target Support Files/Pods-GMTest-GMTestUITests/Pods-GMTest-GMTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CC2F4E03A3FED588BB712D85 /* Pods_GMTestTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GMTestTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D900F1B91DFB87BDE7E97657 /* Pods-GMTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GMTestTests.release.xcconfig"; path = "Target Support Files/Pods-GMTestTests/Pods-GMTestTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +143,6 @@
 				4F838217A585B347BE9BACDB /* Pods-GMTestTests.debug.xcconfig */,
 				D900F1B91DFB87BDE7E97657 /* Pods-GMTestTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -233,6 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				A98F46F525509E3C0014B416 /* DashboardVC.swift */,
+				A98F470C2550A8C80014B416 /* DashboardVM.swift */,
+				A98F470E2550AA790014B416 /* CommitResponse.swift */,
+				A98F47102550AE150014B416 /* CommitCell.swift */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -495,14 +503,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A98F47112550AE150014B416 /* CommitCell.swift in Sources */,
 				A98F470325509E3C0014B416 /* UrlManager.swift in Sources */,
 				A98F470625509E3C0014B416 /* DashboardVC.swift in Sources */,
 				A98F46B925509DE00014B416 /* AppDelegate.swift in Sources */,
 				A98F470725509E3C0014B416 /* Window+VisibleVC.swift in Sources */,
 				A98F46BB25509DE00014B416 /* SceneDelegate.swift in Sources */,
 				A98F46FF25509E3C0014B416 /* Helper.swift in Sources */,
+				A98F470D2550A8C80014B416 /* DashboardVM.swift in Sources */,
 				A98F470525509E3C0014B416 /* EndPoint.swift in Sources */,
 				A98F470125509E3C0014B416 /* APIEndPoints.swift in Sources */,
+				A98F470F2550AA790014B416 /* CommitResponse.swift in Sources */,
 				A98F470925509E3C0014B416 /* UIColor+Helper.swift in Sources */,
 				A98F46FD25509E3C0014B416 /* Constants.swift in Sources */,
 				A98F46FE25509E3C0014B416 /* DeviceDitection.swift in Sources */,

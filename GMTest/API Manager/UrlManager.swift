@@ -9,14 +9,14 @@ import Foundation
 
 #if DEVELOPMENT
 
-let KBasePath = "" // Staging Server
+let KBasePath = "https://api.github.com" // Staging Server
 #else
 
-let KBasePath = "" // Production Server
+let KBasePath = "https://api.github.com" // Production Server
 
 #endif
 
 enum OauthPath: String {
     
-    case getEmployeeList     = ""
+    case getLast25Commits     = "/repos/ThomasWDev/GMTest/commits?per_page="
 }
