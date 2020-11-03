@@ -21,22 +21,10 @@ class DashboardVM{
             switch response {
             case .success(let value):
                 SVProgressHUD.dismiss()
-                let json = JSON(value).arrayValue
-//                let commitList = Mapper<CommitResponse>().mapArray(JSONArray: json)
-//                self.commitList = model?.commitList
-                
-                do {
-                    if let jsonArray = try JSONSerialization
-                        .jsonObject(with: value as! Data, options: []) as? [[String: AnyObject]] {
-                        let model = Mapper<Commit>().mapArray(JSONArray: jsonArray)
-                        self.commitList = model
-                    } else {
-                        /* ... */
-                    }
-                }
-                catch let error as NSError {
-                    print(error)
-                }
+                let json = JSON(value).arrayObject
+
+                guard let jsonDic = json as? [[String:AnyObject]] else {completion(false); return;}
+                self.commitList = Mapper<Commit>().mapArray(JSONArray: jsonDic)
                 
                 completion(true)
             case .failure((let code, let data, let err)):

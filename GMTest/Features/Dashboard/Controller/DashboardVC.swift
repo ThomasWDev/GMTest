@@ -16,7 +16,7 @@ class DashboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "Commit List"
         getData()
     }
     
@@ -39,6 +39,7 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CommitCell.identifier, for: indexPath) as! CommitCell
+        cell.selectionStyle = .none
         cell.configureCell(vm: viewModel, index: indexPath.row)
         return cell
     }

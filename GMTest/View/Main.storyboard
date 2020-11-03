@@ -26,7 +26,7 @@
         <!--DashboardVC-->
         <scene sceneID="RP5-OE-wld">
             <objects>
-                <viewController id="2Ll-Ff-5Mf" customClass="DashboardVC" customModule="GMTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Ll-Ff-5Mf" customClass="DashboardVC" customModule="GMTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OqQ-DS-Uv8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

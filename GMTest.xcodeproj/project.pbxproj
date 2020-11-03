@@ -146,6 +146,41 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A955039F2551A37000BF5886 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				A95503A22551A39600BF5886 /* ViewModel */,
+				A95503A12551A38C00BF5886 /* Model */,
+				A95503A02551A38300BF5886 /* Controller */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		A95503A02551A38300BF5886 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A98F47102550AE150014B416 /* CommitCell.swift */,
+				A98F46F525509E3C0014B416 /* DashboardVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A95503A12551A38C00BF5886 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A98F470E2550AA790014B416 /* CommitResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A95503A22551A39600BF5886 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A98F470C2550A8C80014B416 /* DashboardVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A98F46AC25509DE00014B416 = {
 			isa = PBXGroup;
 			children = (
@@ -237,10 +272,7 @@
 		A98F46F425509E3C0014B416 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				A98F46F525509E3C0014B416 /* DashboardVC.swift */,
-				A98F470C2550A8C80014B416 /* DashboardVM.swift */,
-				A98F470E2550AA790014B416 /* CommitResponse.swift */,
-				A98F47102550AE150014B416 /* CommitCell.swift */,
+				A955039F2551A37000BF5886 /* Dashboard */,
 			);
 			path = Features;
 			sourceTree = "<group>";

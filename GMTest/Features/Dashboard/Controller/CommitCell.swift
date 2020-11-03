@@ -20,6 +20,8 @@ class CommitCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        profileImageView.layer.cornerRadius = 35
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,9 +33,13 @@ class CommitCell: UITableViewCell {
         let msg = vm.commitList?[index].commitMessage ?? ""
         let hash = vm.commitList?[index].commitHash ?? ""
         
+        let imageUrl = vm.commitList?[index].authorImage ?? ""
+        
         authorNameLbl.text = "Author name: \(name)"
         authorMsgLbl.text = "Message: \(msg)"
         commitHashLbl.text = "#: \(hash)"
+        
+        profileImageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "placeholder"))
     }
 
 }

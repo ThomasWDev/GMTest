@@ -32,7 +32,7 @@ struct Commit: Mappable{
     
     mutating func mapping(map: Map) {
         authorName <- map["commit.author.name"]
-        commitHash <- map["tree.sha"]
+        commitHash <- map["commit.tree.sha"]
         commitMessage <- map["commit.message"]
         authorImage <- map["author.avatar_url"]
     }

@@ -3,7 +3,6 @@ PODS:
   - AlamofireObjectMapper (5.2.1):
     - Alamofire (~> 4.7)
     - ObjectMapper (~> 3.4)
-  - Cosmos (17.0.0)
   - IQKeyboardManagerSwift (6.5.6)
   - ObjectMapper (3.5.3)
   - SDWebImage (4.4.8):
@@ -15,7 +14,6 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - AlamofireObjectMapper (~> 5.2)
-  - Cosmos (~> 17.0)
   - IQKeyboardManagerSwift
   - SDWebImage (~> 4.0)
   - SVProgressHUD
@@ -25,7 +23,6 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireObjectMapper
-    - Cosmos
     - IQKeyboardManagerSwift
     - ObjectMapper
     - SDWebImage
@@ -35,13 +32,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
-  Cosmos: 309e489f21ffc91a1eeecfebef7f817cd2fcfba6
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 8e50149902948bc6c618642214fa2d0bd7c5758e
+PODFILE CHECKSUM: af99eb02ee13baa92489de160180de366b632520
 
 COCOAPODS: 1.9.3
