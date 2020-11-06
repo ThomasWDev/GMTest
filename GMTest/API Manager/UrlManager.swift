@@ -9,14 +9,15 @@ import Foundation
 
 #if DEVELOPMENT
 
-let KBasePath = "https://api.themoviedb.org" // Staging Server
+let KBasePath = "https://api.themoviedb.org/3/movie" // Staging Server
 #else
 
-let KBasePath = "https://api.themoviedb.org" // Production Server
+let KBasePath = "https://api.themoviedb.org/3/movie" // Production Server
 
 #endif
 
 enum OauthPath: String {
     
-    case getMovieDataList     = "/3/movie/now_playing?language=en-US&page=undefined&api_key=55957fcf3ba81b137f8fc01ac5a31fb5"
+    case getMovieDataList     = "/now_playing?language=en-US&page="
+    case getMoviePopular      = "/popular?api_key=55957fcf3ba81b137f8fc01ac5a31fb5&language=en-US&page="
 }

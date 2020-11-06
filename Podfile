@@ -14,7 +14,6 @@ target 'GMTest' do
   pod 'SDWebImage', '~> 4.0'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'SDWebImage', '~> 4.0'
-  
 
   target 'GMTestTests' do
     inherit! :search_paths

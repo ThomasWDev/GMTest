@@ -10,12 +10,8 @@ import UIKit
 
 extension UIColor {
     
-    static var saMegenda: UIColor? {
-        if #available(iOS 11.0, *) {
-            return UIColor(named: "saMegenda")
-        } else {
-            return UIColor.init(rgb: 0xdc6285)
-        }
+    static var DeepGreen: UIColor? {
+        return UIColor(named: "DeepGreen")
     }
 
     

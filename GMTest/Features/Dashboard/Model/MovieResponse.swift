@@ -2,7 +2,7 @@
 //  MovieResponse.swift
 //  GMTest
 //
-//  Created by Shahriar Mahmud on 11/6/20.
+//  Created by Thomas Woodfin on 11/6/20.
 //  Copyright © 2020 Thomas Woodfin. All rights reserved.
 //
 
@@ -25,7 +25,7 @@ struct Movie: Mappable{
     
     var popularity: Double?
     
-    var vote_count: Int?
+    var vote_count: Double?
     var video: Bool?
     var poster_path: String?
     var id: Int?
