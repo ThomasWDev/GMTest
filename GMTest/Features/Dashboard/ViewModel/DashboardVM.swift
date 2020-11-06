@@ -15,16 +15,12 @@ class DashboardVM{
     
     var commitList: [Commit]?
     
-    func getCommits(completion: @escaping (_ success: Bool) -> Void){
+    func getMoviesData(completion: @escaping (_ success: Bool) -> Void){
         SVProgressHUD.show()
-        APIClient.shared.makeAPICall(apiEndPoint: GithubDataEndPoint.getLast25Commits(limit: 25)) { (response) in
+        APIClient.shared.objectAPICall(apiEndPoint: GithubDataEndPoint.getMovieDataList, modelType: Commit.self) { (response) in
             switch response {
             case .success(let value):
                 SVProgressHUD.dismiss()
-                let json = JSON(value).arrayObject
-
-                guard let jsonDic = json as? [[String:AnyObject]] else {completion(false); return;}
-                self.commitList = Mapper<Commit>().mapArray(JSONArray: jsonDic)
                 
                 completion(true)
             case .failure((let code, let data, let err)):

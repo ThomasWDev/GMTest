@@ -16,7 +16,7 @@ class DashboardVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Commit List"
+        title = "MOVIEBOX"
         getData()
     }
     
@@ -42,6 +42,18 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         cell.configureCell(vm: viewModel, index: indexPath.row)
         return cell
+    }
+    
+    
+}
+
+extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        <#code#>
     }
     
     

@@ -13,11 +13,11 @@ import SwiftyJSON
 //MARK:- EmployeeData
 enum GithubDataEndPoint: Endpoint {
     
-    case getLast25Commits(limit: Int)
+    case getMovieDataList
     
     var method: HTTPMethod {
         switch self {
-        case .getLast25Commits:
+        case .getMovieDataList:
             return .get
         
         }
@@ -25,15 +25,15 @@ enum GithubDataEndPoint: Endpoint {
     
     var path: String {
         switch self {
-        case .getLast25Commits(let limit):
-            return KBasePath + OauthPath.getLast25Commits.rawValue + String(limit)
+        case .getMovieDataList:
+            return KBasePath + OauthPath.getMovieDataList.rawValue
             
         }
     }
     
     var query: [String: Any]  {
         switch self {
-        case .getLast25Commits:
+        case .getMovieDataList:
             return [String: Any]()
     
         }

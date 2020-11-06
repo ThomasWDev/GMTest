@@ -9,14 +9,14 @@ import Foundation
 
 #if DEVELOPMENT
 
-let KBasePath = "https://api.github.com" // Staging Server
+let KBasePath = "https://api.themoviedb.org" // Staging Server
 #else
 
-let KBasePath = "https://api.github.com" // Production Server
+let KBasePath = "https://api.themoviedb.org" // Production Server
 
 #endif
 
 enum OauthPath: String {
     
-    case getLast25Commits     = "/repos/ThomasWDev/GMTest/commits?per_page="
+    case getMovieDataList     = "/3/movie/now_playing?language=en-US&page=undefined&api_key=55957fcf3ba81b137f8fc01ac5a31fb5"
 }
