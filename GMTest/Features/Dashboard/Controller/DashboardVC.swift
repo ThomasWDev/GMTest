@@ -11,6 +11,7 @@ import UIKit
 class DashboardVC: UIViewController {
     
     @IBOutlet weak private var tblView: UITableView!
+    @IBOutlet weak private var clcView: UICollectionView!
     
     private let viewModel = DashboardVM()
 
@@ -21,9 +22,10 @@ class DashboardVC: UIViewController {
     }
     
     private func getData(){
-        viewModel.getCommits { (success) in
+        viewModel.getMoviesData { (success) in
             if success{
                 self.tblView.reloadData()
+                self.clcView.reloadData()
             }
         }
     }
@@ -31,14 +33,14 @@ class DashboardVC: UIViewController {
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if viewModel.commitList?.count == 0{
+        if viewModel.movieList?.count == 0{
             Helper.emptyMessageInTableView(tableView, "No data available")
         }
-        return viewModel.commitList?.count ?? 0
+        return viewModel.movieList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CommitCell.identifier, for: indexPath) as! CommitCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
         cell.selectionStyle = .none
         cell.configureCell(vm: viewModel, index: indexPath.row)
         return cell
@@ -49,11 +51,18 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
 
 extension DashboardVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        <#code#>
+        if viewModel.movieList?.count == 0{
+            Helper.emptyMessageInCollectionView(collectionView, "No data available")
+        }else{
+            collectionView.backgroundView = nil
+        }
+        return viewModel.movieList?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoviePosterCell.identifire, for: indexPath) as! MoviePosterCell
+        cell.configureCell(vm: viewModel, index: indexPath.row)
+        return cell
     }
     
     

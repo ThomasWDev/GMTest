@@ -21,6 +21,15 @@ struct Helper{
         tableView.separatorStyle = .none
         noDataLabel.text = title
     }
+    
+    static func emptyMessageInCollectionView(_ collectionView: UICollectionView,_ title: String){
+        let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: collectionView.bounds.size.width, height: collectionView.bounds.size.height))
+        noDataLabel.textColor        = .lightGray
+        noDataLabel.font             = UIFont(name: "Open Sans", size: 15)
+        noDataLabel.textAlignment    = .center
+        collectionView.backgroundView = noDataLabel
+        noDataLabel.text = title
+    }
 
     static func getDate(time:Int)->String{
         let date = Date(timeIntervalSince1970: TimeInterval(time))

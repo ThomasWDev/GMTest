@@ -11,9 +11,7 @@ import UIKit
 let IS_IPHONE_X = (UIScreen.main.nativeBounds.height == 2436)
 
 struct Constants {
-    static let gitHubUserName      = "ThomasWDev"
-    static let gitHubRepoName      = "GMTest"
-    
+    static let imageURL = "https://image.tmdb.org/t/p/w440_and_h660_face/"
 
 }
 
