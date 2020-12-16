@@ -48,6 +48,18 @@ struct Helper{
         print("Image Size KB = \(KB), MB = \(MB)")
         return imageData
     }
+    
+    static func loadJSON(jsonFileName name: String) -> Data?{
+        if let path = Bundle.main.path(forResource: name, ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                return data
+            } catch {
+                print("error)")
+            }
+        }
+        return nil
+    }
 
 }
 

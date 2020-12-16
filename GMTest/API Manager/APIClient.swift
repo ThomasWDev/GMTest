@@ -10,15 +10,21 @@ import Foundation
 import Alamofire
 import AlamofireObjectMapper
 import ObjectMapper
+import SwiftyJSON
 
 public enum Result<T> {
     case success(T)
     case failure(ErrorResponse)
 }
 
+public enum Response<T> {
+    case success(T)
+}
+
 typealias CompletionHandler<T> = (Result<T>) -> ()
 public typealias ErrorResponse = (Int, Data?, Error)
 typealias SocialCompletion = (HTTPURLResponse) -> ()
+typealias ResponseCompletion<T> = (Response<T>) -> ()
 
 
 class APIClient {
@@ -96,6 +102,19 @@ class APIClient {
                     let mError = ErrorResponse(statusCode, response.data, error)
                     completion(Result.failure(mError))
                 }
+        }
+    }
+    
+    func checkMockdata<T: Mappable>(fileName: String, modelType: T.Type, completion: @escaping ResponseCompletion<T>) {
+        let jsonData = Helper.loadJSON(jsonFileName: fileName)
+        if let data = jsonData {
+            do {
+                let response = try JSON(data: data)
+                guard let model = modelType.init(JSON: response.dictionaryObject!) else {return}
+
+                completion(Response.success(model))
+            } catch {
+            }
         }
     }
    
