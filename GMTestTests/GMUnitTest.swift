@@ -1,15 +1,15 @@
 //
-//  GMTestTests.swift
+//  GMUnitTest.swift
 //  GMTestTests
 //
-//  Created by Thomas Woodfin on 11/3/20.
-//  Copyright © 2020 Thomas Woodfin. All rights reserved.
+//  Created by Shahriar Mahmud on 1/8/21.
+//  Copyright © 2021 Thomas Woodfin. All rights reserved.
 //
 
 import XCTest
-@testable import GMTest
+import GMTest
 
-class GMTestTests: XCTestCase {
+class GMUnitTest: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -34,7 +34,7 @@ class APIClient {
     class var shared: APIClient {
         guard let uwShared = privateShared else {
             privateShared = APIClient()
-            return privateShared!
+            return privateShared ?? APIClient()
         }
         return uwShared
     }
@@ -110,7 +110,7 @@ class APIClient {
         if let data = jsonData {
             do {
                 let response = try JSON(data: data)
-                guard let model = modelType.init(JSON: response.dictionaryObject!) else {return}
+                guard let model = modelType.init(JSON: response.dictionaryObject ?? [String : Any]()) else {return}
 
                 completion(Response.success(model))
             } catch {

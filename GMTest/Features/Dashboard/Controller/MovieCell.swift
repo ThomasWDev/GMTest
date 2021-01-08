@@ -50,7 +50,7 @@ class MovieCell: UITableViewCell {
         let count = voteAvg/10
         circularProgressView.setProgressWithAnimation(duration: 0.1, value: Float(count))
         
-        circularProgressView.trackClr =  UIColor.DeepGreen!
+        circularProgressView.trackClr =  UIColor.DeepGreen ?? UIColor.systemGreen
         circularProgressView.progressClr = avg > 50 ? UIColor.systemGreen : UIColor.systemYellow
 
     }

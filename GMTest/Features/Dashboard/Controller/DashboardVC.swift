@@ -38,12 +38,12 @@ class DashboardVC: UIViewController {
     }
     
     private func getData(pageCount: Int){
-        viewModel.getMoviesData(pageCount: pageCount) { (success) in
+        viewModel.getMoviesData(pageCount: pageCount) {[weak self] (success) in
             if success{
-                self.viewModel.getPopularMoviesData(isShowLoader: false, pageCount: self.pageNo) { (success) in
+                self?.viewModel.getPopularMoviesData(isShowLoader: false, pageCount: self?.pageNo ?? 1) {[weak self] (success) in
                     if success{
-                        self.tblView.reloadData()
-                        self.clcView.reloadData()
+                        self?.tblView.reloadData()
+                        self?.clcView.reloadData()
                     }
                 }
                 
@@ -98,9 +98,9 @@ extension DashboardVC: UITableViewDelegate, UITableViewDataSource{
                 if !isDataLoading{
                     isDataLoading = true
                     self.pageNo = self.pageNo + 1
-                    self.viewModel.getPopularMoviesData(isShowLoader: true, pageCount: self.pageNo) { (success) in
+                    self.viewModel.getPopularMoviesData(isShowLoader: true, pageCount: self.pageNo) {[weak self] (success) in
                         if success{
-                            self.tblView.reloadData()
+                            self?.tblView.reloadData()
                         }
                     }
 
